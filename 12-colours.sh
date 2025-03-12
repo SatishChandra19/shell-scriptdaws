@@ -15,7 +15,7 @@ VALIDATE(){
         fi
 }
 
-If [ $USERID -ne 0]
+If [ $USERID -ne 0 ]
 then
    echo "Error: you must have sudo access to execute this script"
    exit 1 #other than 0
