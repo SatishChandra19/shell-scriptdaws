@@ -53,9 +53,11 @@ echo "Script started executing at: $TIMESTAMP" &>>$LOG_FILE_NAME
 
 FILES=$(find $SOURCE_DIR -name "*.log" -mtime +$DAYS)
 
-if [ -n "$FILES" ]
+if [ -n "$FILES" ] # true if there are files to zip
 then 
     echo "Files are: $FILES"
+    ZIP_FILE="$DEST_DIR/APP-LOGS-$TIMESTAMP.zip"
+    find $SOURCE_DIR -name "*.log" -mtime +$DAYS | zip -@ "$ZIP_FILE"
 else
-    scho "No files found older that $DAYS to zip"
+    echo "No files found older than $DAYS"
 fi
