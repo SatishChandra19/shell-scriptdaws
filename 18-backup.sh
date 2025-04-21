@@ -43,7 +43,7 @@ then
     exit 1
 fi
 
-if [ ! $DEST_DIR_DIR ] 
+if [ ! $DEST_DIR ] 
 then
     echo -e "$SOURCE_DIR Does not exist... Please check"
     exit 1
